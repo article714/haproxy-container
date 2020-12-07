@@ -1,0 +1,20 @@
+FROM article714/debian-based-container:latest
+LABEL maintainer="C. Guychard <Article714>"
+
+
+
+# Generate locale C.UTF-8 for postgres and general locale data
+ENV LANG C.UTF-8
+
+# Container tooling
+
+COPY container /container
+
+# container building
+
+RUN /container/build.sh
+
+# port exposed (default)
+
+EXPOSE 80
+EXPOSE 443

@@ -1,0 +1,18 @@
+stages:
+  - build
+  - tests
+  - publish_images
+
+variables:
+  HAPROXY_CONTAINER_VERSION: '0.1.0'
+
+#-----------------------------------------
+build_image:
+  stage: build
+  tags:
+    - shell
+  variables:
+    BUILD_OPTS: '--force-rm --no-cache'
+  script:
+    - docker build ${BUILD_OPTS} -t article714/haproxy-container:${HAPROXY_CONTAINER_VERSION}  --build-arg HAPROXY_CONTAINER_VERSION=${HAPROXY_CONTAINER_VERSION} .
+

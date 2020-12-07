@@ -1,0 +1,7 @@
+#!/bin/sh
+exec 2>&1
+
+CONFIG="/container/config/haproxy/haproxy.cfg"
+EXTRAOPTS="-de -m 16"
+
+exec /usr/sbin/haproxy -Ws -f $CONFIG -p /var/run/haproxy.pid $EXTRAOPTS
