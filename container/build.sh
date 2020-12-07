@@ -3,7 +3,7 @@
 #set -x
 
 apt-get update
-apt-get instal -yq curl
+apt-get install -yq curl
 
 # Generate French locales
 localedef -i fr_FR -c -f UTF-8 -A /usr/share/locale/locale.alias fr_FR.UTF-8
