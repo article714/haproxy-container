@@ -20,7 +20,7 @@ echo deb http://haproxy.debian.net buster-backports-2.2 main | tee /etc/apt/sour
 apt-get update
 apt-get upgrade -yq
 
-apt-get install haproxy=2.2.\*
+apt-get install -yq haproxy=2.2.\*
 
 #--
 # Cleaning
