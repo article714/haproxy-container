@@ -3,7 +3,6 @@
 #set -x
 
 apt-get update
-apt-get install -yq curl
 
 # Generate French locales
 localedef -i fr_FR -c -f UTF-8 -A /usr/share/locale/locale.alias fr_FR.UTF-8
@@ -11,7 +10,7 @@ localedef -i fr_FR -c -f UTF-8 -A /usr/share/locale/locale.alias fr_FR.UTF-8
 export LANG=en_US.utf8
 
 # Install basic needed packages
-LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -qy --no-install-recommends wget gnupg ca-certificates runit rsyslog logrotate
+LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -qy --no-install-recommends curl wget gnupg ca-certificates runit rsyslog logrotate
 
 # Install HaProxy from pre-built packages
 curl https://haproxy.debian.net/bernat.debian.org.gpg | apt-key add -
