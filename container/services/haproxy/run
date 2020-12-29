@@ -2,7 +2,7 @@
 exec 2>&1
 
 CONFIG="/container/config/haproxy/haproxy.cfg"
-EXTRAOPTS="-de -m 512"
+EXTRAOPTS="-m 512"
 
 mkdir -p /run/haproxy
 chown haproxy.root /run/haproxy
